@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FlightProvider } from "./context/FlightContext";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <FlightProvider>
+      <div className="app">
+        <header className="app-header">
+          <div className="container">
+            <h1 className="app-title">✈️ Flight Search</h1>
+            <p className="app-subtitle">Find the best deals on flights</p>
+          </div>
+        </header>
+
+        <main className="app-main">
+          <div className="container">
+            {/* Search Form will go here */}
+            <div className="search-section">
+              <p>Search form coming soon...</p>
+            </div>
+
+            {/* Results will go here */}
+            <div className="results-section">
+              <p>Flight results will appear here...</p>
+            </div>
+          </div>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </FlightProvider>
+  );
 }
 
-export default App
+export default App;
