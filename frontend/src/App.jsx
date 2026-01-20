@@ -2,11 +2,13 @@ import { useState } from "react";
 import { FlightProvider } from "./context/FlightContext";
 import SearchForm from "./components/SearchForm/SearchForm";
 import FlightList from "./components/FlightList/FlightList";
+import PriceGraph from "./components/PriceGraph/PriceGraph";
 import { useFlightSearch } from "./hooks/useFlightSearch";
 import "./App.css";
 
 function AppContent() {
-  const { flights, loading, error, performSearch } = useFlightSearch();
+  const { flights, priceData, loading, error, performSearch } =
+    useFlightSearch();
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (searchParams) => {
@@ -39,7 +41,12 @@ function AppContent() {
                 </div>
               )}
 
-              {!error && <FlightList flights={flights} loading={loading} />}
+              {!error && (
+                <>
+                  <PriceGraph priceHistory={priceData} loading={loading} />
+                  <FlightList flights={flights} loading={loading} />
+                </>
+              )}
             </div>
           )}
         </div>
