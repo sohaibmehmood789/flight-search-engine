@@ -80,6 +80,21 @@
   font-style: italic;
 }
 
+.results-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.filters-sidebar {
+  min-width: 0;
+}
+
+.flights-main {
+  min-width: 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .app-title {
@@ -93,5 +108,10 @@
   .search-section,
   .results-section {
     padding: 1.5rem;
+  }
+
+  .results-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
