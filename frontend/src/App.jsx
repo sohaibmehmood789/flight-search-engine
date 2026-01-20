@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FlightProvider } from "./context/FlightContext";
 import SearchForm from "./components/SearchForm/SearchForm";
+import FlightList from "./components/FlightList/FlightList";
 import { useFlightSearch } from "./hooks/useFlightSearch";
 import "./App.css";
 
@@ -32,33 +33,13 @@ function AppContent() {
           {/* Results */}
           {hasSearched && (
             <div className="results-section">
-              {loading && (
-                <p className="loading-text">Searching for flights...</p>
-              )}
-
               {error && (
                 <div className="error-box">
                   <p>❌ {error}</p>
                 </div>
               )}
 
-              {!loading && !error && flights.length === 0 && (
-                <p className="no-results">
-                  No flights found. Try adjusting your search.
-                </p>
-              )}
-
-              {!loading && flights.length > 0 && (
-                <div>
-                  <h2 className="results-title">
-                    Found {flights.length} flight
-                    {flights.length !== 1 ? "s" : ""}
-                  </h2>
-                  <p className="results-placeholder">
-                    Flight list component coming next...
-                  </p>
-                </div>
-              )}
+              {!error && <FlightList flights={flights} loading={loading} />}
             </div>
           )}
         </div>
