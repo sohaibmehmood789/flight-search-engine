@@ -48,6 +48,38 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.loading-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.error-box {
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--error-color);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.results-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.results-placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .app-title {

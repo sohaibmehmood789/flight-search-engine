@@ -1,0 +1,182 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Trip Type Toggle */
+.trip-type-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-light);
+  padding: 0.25rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.trip-type-toggle button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.trip-type-toggle button.active {
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Grid */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* Swap Button */
+.swap-button {
+  align-self: end;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.swap-button .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+}
+
+.swap-button:hover {
+  background: white;
+  transform: rotate(180deg);
+}
+
+/* Date Inputs */
+.date-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.date-input.error {
+  border-color: var(--error-color);
+}
+
+/* Class Select */
+.class-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.class-select:hover {
+  border-color: var(--primary-color);
+}
+
+.class-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Error Messages */
+.error-message {
+  font-size: 0.75rem;
+  color: var(--error-color);
+  margin-top: -0.25rem;
+}
+
+/* Search Button */
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.search-button .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.search-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .swap-button {
+    display: none;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
