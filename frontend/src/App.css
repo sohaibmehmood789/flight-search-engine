@@ -4,7 +4,10 @@
 }
 
 .app-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(rgba(102, 126, 234, 0.85), rgba(118, 75, 162, 0.85)),
+    url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
   backdrop-filter: blur(10px);
   padding: 2rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -13,14 +16,16 @@
 .app-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #ffffff;
   margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .app-subtitle {
   font-size: 1.1rem;
-  color: #718096;
+  color: #f0f0f0;
   margin: 0.5rem 0 0 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .container {

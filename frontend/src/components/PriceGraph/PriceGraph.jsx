@@ -29,9 +29,9 @@ const CustomTooltip = ({ active, payload, priceHistory }) => {
 
 const PriceGraph = ({ priceHistory, loading }) => {
   const chartData = useMemo(() => {
-    if (!priceHistory || !priceHistory.data) return [];
+    if (!priceHistory || !priceHistory.prices) return [];
 
-    return priceHistory.data.map((item) => ({
+    return priceHistory.prices.map((item) => ({
       date: new Date(item.date).toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
@@ -130,7 +130,6 @@ const PriceGraph = ({ priceHistory, loading }) => {
       <p className="graph-note">
         💡 Prices are based on historical data and may vary
       </p>
-      priceHistory={priceHistory}
     </div>
   );
 };

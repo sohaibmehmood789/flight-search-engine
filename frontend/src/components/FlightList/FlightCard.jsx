@@ -14,6 +14,7 @@ const FlightCard = ({ flight }) => {
   const stops = segments.length - 1;
   const airline = validatingAirlineCodes[0];
 
+
   return (
     <div className="flight-card">
       <div className="flight-card-header">
@@ -66,10 +67,6 @@ const FlightCard = ({ flight }) => {
             </span>
           </div>
         )}
-      </div>
-
-      <div className="flight-card-footer">
-        <button className="book-button">Select Flight</button>
       </div>
     </div>
   );
